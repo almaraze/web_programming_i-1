@@ -5,5 +5,5 @@
     <hr>
     Token: <input type="text" size="100" maxlength="100" name="csrf_token" value="{{csrf_token}}"/><br>
     <hr>
-    <input type="submit" name="register" value="Register"/>
+    <input type="submit" name="register" value="Register"/><input type="button" onclick="location.href='/login';" value="cancel" />
 </form>
