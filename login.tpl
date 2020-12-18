@@ -8,6 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="google-signin-client_id" content="488698820452-t7kb3gotol12949va445a05nu1uil42s.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     
 
 	<title>Login</title>
@@ -51,14 +55,20 @@
         <input type="text" name="csrf_token" value="{{csrf_token}}"/>
         
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<div class="data">
+			<p>Profile Details</p>
+			<img id="pic" class="img-circle" width"100" height="100"/>
+			<p>Email Address</p>
+			<p id="email" class="alert alert-danger"></p>
+			<button onclick="signOut()" class="btn btn-danger">SignOut</button>
+			
+		</div>
 		
 		<div id="lower">
 		
 		<input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
 		
 		<input type="submit" name="login" value="Log In"/>
-
-		<!-- <button onclick="signOut()">Log Out</button> -->
 		
         </div>
 
@@ -76,13 +86,21 @@
 
 	function onSignIn(googleUser) {
     	// get user profile information
-    	console.log(googleUser.getBasicProfile())
+		var profile=googleUser.getBasicProfile();
+		$(".g-signin2").css("display", "none");
+		$(".data").css("data", "block");
+		$("#pic").attr('src', profile.getImageUrl());
+		$("#email").text(profile.getEmail());
     }
 
 /*	function signOut() {
-		gapi.auth2.getAuthInstance().signOut().then(function() {
-    		console.log('user signed out')
-	})
+		var auth2 = gapi.auth2.getAuthInstance();
+		auth2.signOut().then(function() {
+			alert("You have been successfully signed out");
+    		console.log('user signed out');
+			$(".g-signin2").css("display", "block");
+			$(".data").css("data", "none");
+	});
 } 
 */
 </script>
