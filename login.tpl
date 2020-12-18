@@ -22,7 +22,8 @@
 	
 <body>
 	
-	<!-- Begin Page Content -->
+    <!-- Begin Page Content -->
+    <hr><h3 class="w3-block w3-grey w3-center">Basic Todo List, version 1.1</h3><hr>
 	
 	<div id="container">
 		
