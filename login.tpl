@@ -58,7 +58,7 @@
 		
 		<input type="submit" name="login" value="Log In"/>
 
-		<button onclick="signOut()">Log Out</button>
+		<!-- <button onclick="signOut()">Log Out</button> -->
 		
         </div>
 
@@ -79,11 +79,12 @@
     	console.log(googleUser.getBasicProfile())
     }
 
-	function signOut() {
+/*	function signOut() {
 		gapi.auth2.getAuthInstance().signOut().then(function() {
     		console.log('user signed out')
 	})
-}
+} 
+*/
 </script>
     <!-- End Page Content -->
 	
