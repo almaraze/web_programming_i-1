@@ -87,6 +87,7 @@
 	function onSignIn(googleUser) {
     	// get user profile information
 		var profile=googleUser.getBasicProfile();
+		var googleUserName = profile.getName();
 		$(".g-signin2").css("display", "none");
 		$(".data").css("data", "block");
 		$("#pic").attr('src', profile.getImageUrl());
