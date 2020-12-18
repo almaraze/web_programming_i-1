@@ -6,7 +6,7 @@
 	
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="google-signin-client_id" content="488698820452-t7kb3gotol12949va445a05nu1uil42s.apps.googleusercontent.com"
+    <meta name="google-signin-client_id" content="488698820452-t7kb3gotol12949va445a05nu1uil42s.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     
 
@@ -48,7 +48,9 @@
 		
 		<label class="showPW" for="showPW">Show Password</label>
 		
-		<input type="text" name="csrf_token" value="{{csrf_token}}"/>
+        <input type="text" name="csrf_token" value="{{csrf_token}}"/>
+        
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
 		
 		<div id="lower">
 		
@@ -57,7 +59,7 @@
 		<input type="submit" name="login" value="Login"/>
 		
         </div>
-        		
+
         </form>	
 	</div>
 <script>
