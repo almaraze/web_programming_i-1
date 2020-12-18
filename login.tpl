@@ -5,8 +5,11 @@
 	<!-- Basics -->
 	
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-signin-client_id" content="488698820452-t7kb3gotol12949va445a05nu1uil42s.apps.googleusercontent.com"
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+
 	<title>Login</title>
 
 	<!-- CSS -->
@@ -53,22 +56,44 @@
 		
 		<input type="submit" name="login" value="Login"/>
 		
-		</div>
+        </div>
+        
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div id="content"></div>
 		
-		</form>
-		
+        </form>	
 	</div>
 <script>
-function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+    function onSignIn(googleUser){
+        var profile = googleUser.getBasicProfile();
+        console.log('User is ' + JSON.stringify(profile))
+        
+        var element = document.querySelector('#content');
+        element.innerText = googleUser.getBasicProfile().getName();
+        
+        var image = document.createElement('img');
+        image.setAttribute('src', profile.getImageUrl())
+        element.append(image)
+    }
+
+    function signOut(){
+        gapi.auth2.getAuthInstance().signOut().then(function() {
+            console.log('user signed out')
+        })
+    }
 </script>
-	<!-- End Page Content -->
+    <!-- End Page Content -->
+    
+    <button onclick="signOut()">Sign Out</button>
 	
 </body>
 
