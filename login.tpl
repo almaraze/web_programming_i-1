@@ -11,9 +11,9 @@
 
 	<!-- CSS -->
 
-	<link rel="stylesheet" type="text/css" href="/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
     
 	
 </head>
