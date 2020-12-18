@@ -29,9 +29,10 @@ def get_session(request, response):
 def save_session(session):
     db['session'].update(session,['session_id'])
 
-@route('/static/<filename:path>')
-def server_static(filename):
-    return static_file(filename, root='/static')
+# Static CSS Files
+@bottle.route('/static/css/<filename:re:.*\.css>')
+def send_css(filename):
+    return static_file(filename, root='static/css')
 
 @get('/login')
 def get_login():
