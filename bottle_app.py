@@ -30,7 +30,7 @@ def save_session(session):
     db['session'].update(session,['session_id'])
 
 # Static CSS Files
-@bottle.route('/static/css/<filename:re:.*\.css>')
+@route('/static/css/<filename:re:.*\.css>')
 def send_css(filename):
     return static_file(filename, root='static/css')
 
