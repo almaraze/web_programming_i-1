@@ -56,7 +56,9 @@
 		
 		<input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
 		
-		<input type="submit" name="login" value="Login"/>
+		<input type="submit" name="login" value="Log In"/>
+
+		<button onclick="signOut()">Log Out</button>
 		
         </div>
 
@@ -76,6 +78,12 @@
     	// get user profile information
     	console.log(googleUser.getBasicProfile())
     }
+
+	function signOut() {
+		gapi.auth2.getAuthInstance().signOut().then(function() {
+    		console.log('user signed out')
+	})
+}
 </script>
     <!-- End Page Content -->
 	
