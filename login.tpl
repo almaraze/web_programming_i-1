@@ -100,6 +100,7 @@
     		console.log('user signed out');
 			$(".g-signin2").css("display", "block");
 			$(".data").css("data", "none");
+			$location.reload();
 	});
 } 
 
