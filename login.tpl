@@ -60,7 +60,7 @@
 			<img id="pic" class="img-circle" width"100" height="100"/>
 			<p>Email Address</p>
 			<p id="email" class="alert alert-danger"></p>
-			<button onclick="signOut()" class="btn btn-danger">SignOut</button>
+			<a href="#" onclick="signOut()">Sign Out</a>
 			
 		</div>
 		
