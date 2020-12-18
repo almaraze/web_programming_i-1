@@ -11,9 +11,10 @@
 
 	<!-- CSS -->
 	
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
 	
 </head>
 
