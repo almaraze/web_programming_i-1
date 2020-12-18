@@ -6,7 +6,7 @@ import json
 
 db = dataset.connect('sqlite:///todo.db')
 
-from bottle import get, post, request, response, template, redirect, default_app
+from bottle import get, route, post, request, response, template, redirect, default_app, static_file
 
 def get_session(request, response):
     session_id = request.cookies.get("session_id",None)
@@ -28,6 +28,10 @@ def get_session(request, response):
 
 def save_session(session):
     db['session'].update(session,['session_id'])
+
+@route('/static/<filepath:path>')
+def server_static(filename):
+    return static_file(filename, root='/static')
 
 @get('/login')
 def get_login():
