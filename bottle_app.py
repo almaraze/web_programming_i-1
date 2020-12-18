@@ -29,7 +29,7 @@ def get_session(request, response):
 def save_session(session):
     db['session'].update(session,['session_id'])
 
-@route('/static/<filepath:path>')
+@route('/static/<filename:path>')
 def server_static(filename):
     return static_file(filename, root='/static')
 
