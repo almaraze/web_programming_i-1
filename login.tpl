@@ -57,10 +57,7 @@
 		<input type="submit" name="login" value="Login"/>
 		
         </div>
-        
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <div id="content"></div>
-		
+        		
         </form>	
 	</div>
 <script>
@@ -72,28 +69,8 @@
             x.type = "password";
         }
     }
-
-    function onSignIn(googleUser){
-        var profile = googleUser.getBasicProfile();
-        console.log('User is ' + JSON.stringify(profile))
-        
-        var element = document.querySelector('#content');
-        element.innerText = googleUser.getBasicProfile().getName();
-        
-        var image = document.createElement('img');
-        image.setAttribute('src', profile.getImageUrl())
-        element.append(image)
-    }
-
-    function signOut(){
-        gapi.auth2.getAuthInstance().signOut().then(function() {
-            console.log('user signed out')
-        })
-    }
 </script>
     <!-- End Page Content -->
-    
-    <button onclick="signOut()">Sign Out</button>
 	
 </body>
 
