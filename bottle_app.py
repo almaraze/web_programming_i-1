@@ -99,17 +99,18 @@ def post_register():
     redirect('/')
 
 
-@get('/')
-def get_show_list():
-    session = get_session(request, response)
-    if session['username'] == 'Guest':
-        redirect('/login')
-        return
-    result = db['todo'].all()
-    result=[dict(r) for r in result]
-    return template("show_list", rows=result, session=session)
+# @get('/')
+# def get_show_list():
+#     session = get_session(request, response)
+#     if session['username'] == 'Guest':
+#         redirect('/login')
+#         return
+#     result = db['todo'].all()
+#     result=[dict(r) for r in result]
+#     return template("show_list", rows=result, session=session)
 
-@get('/show_list_ajax')
+#@get('/show_list_ajax')
+@get('/')
 def get_show_list_ajax():
     session = get_session(request, response)
     if session['username'] == 'Guest':

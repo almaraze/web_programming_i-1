@@ -27,25 +27,23 @@
 		
 		<form action="/login" method="POST">
 		
-		<label for="name">Username:</label>
+		<label for="username">Username:</label>
 		
-		<input type="name" name="username">
+		<input type="username">
 		
 		<label for="password">Password:</label>
 		
 		<p><a href="#">Forgot your password?</a>
 		
-		<input type="password" value="FakePSW" name="password" id="myInput">		
-		
-		<label for="csrf_token">Token:</label>		
-				
-		<input type="checkbox" onclick="myFunction()">
-		
-		<label class="showPW" for="showPW">Show Password</label>
-		
-		<input type="text" name="csrf_token" value="{{csrf_token}}"/>
+		<input type="password">
 		
 		<div id="lower">
+        
+        <hr>
+    
+        Token: <input type="text" size="100" maxlength="100" name="csrf_token" value="{{csrf_token}}"/><br>
+    
+        <hr>
 		
 		<input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
 		
@@ -56,25 +54,21 @@
 		</form>
 		
 	</div>
-<script>
-function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-</script>
+	
+	
 	<!-- End Page Content -->
 	
 </body>
 
-
 </html>
-	
-	
-	
-	
-		
-	
+
+
+<p>Login</p>
+<form action="/login" method="POST">
+    User Name: <input type="text" size="100" maxlength="100" name="username"/><br>
+    Password:  <input type="text" size="100" maxlength="100" name="password"/><br>
+    <hr>
+    Token: <input type="text" size="100" maxlength="100" name="csrf_token" value="{{csrf_token}}"/><br>
+    <hr>
+    <input type="submit" name="login" value="Login"/>
+</form>
