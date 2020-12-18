@@ -10,10 +10,10 @@
 	<title>Login</title>
 
 	<!-- CSS -->
-	
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<link rel="stylesheet" type="text/css" href="{$RootDirectory}/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="{$RootDirectory}/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="{$RootDirectory}/css/styles.css">
     
 	
 </head>
