@@ -60,6 +60,8 @@
 
 		<input type="submit" name="login" value="Log In"/>
 
+		<input type="button" onclick="location.href='/register';" value="Register"/>
+
         </div>
 
         </form>
