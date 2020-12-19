@@ -54,8 +54,6 @@
 
         <input type="text" name="csrf_token" value="{{csrf_token}}"/>
 
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
 		<div id="lower">
 
 		<input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
@@ -66,6 +64,9 @@
 
         </form>
 	</div>
+
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 <script>
 
 

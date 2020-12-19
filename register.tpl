@@ -51,8 +51,6 @@
 
     <input type="text" name="csrf_token" value="{{csrf_token}}"/>
 
-    <div class="g-signin2" data-onsuccess="onSignIn">Register With your Google Account</div>
-
     <div id="lower">
 
     <input type="submit" name="register" value="Register"/>
@@ -60,6 +58,8 @@
     </div>
 </form>
 </div>
+
+<div class="g-signin2" data-onsuccess="onSignIn">Register With your Google Account</div>
 
 <script>
 
