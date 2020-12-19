@@ -38,13 +38,13 @@
 
 		<label for="name">Username:</label>
 
-		<input type="name" id="username" name="username">
+		<input type="name" value="" id="username" name="username">
 
 		<label for="password">Password:</label>
 
 		<p><a href="#">Forgot your password?</a>
 
-		<input type="password" value="FakePSW" name="password" id="password">
+		<input type="password" value="" name="password" id="password">
 
 		<label for="csrf_token">Token:</label>
 
@@ -55,15 +55,6 @@
         <input type="text" name="csrf_token" value="{{csrf_token}}"/>
 
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-		<div class="data">
-			<p>Profile Details</p>
-			<img id="pic" class="img-circle" width"100" height="100"/>
-			<p>Email Address</p>
-			<p id="email" class="alert alert-danger"></p>
-			<a href="#" onclick="signOut()">Sign Out</a>
-
-		</div>
 
 		<div id="lower">
 
@@ -76,6 +67,9 @@
         </form>
 	</div>
 <script>
+
+
+
     function myFunction() {
         var x = document.getElementById("password");
         if (x.type === "password") {
@@ -86,11 +80,7 @@
     }
 
 	function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        var profile = googleUser.getBasicProfile();
 
         var UserNameElement = document.getElementById("username");
         var PWElement = document.getElementById("password");
@@ -101,16 +91,6 @@
         document.getElementById("myform").submit();
     }
 
-	function signOut() {
-		var auth2 = gapi.auth2.getAuthInstance();
-		auth2.signOut().then(function() {
-			alert("You have been successfully signed out");
-    		console.log('user signed out');
-			$(".g-signin2").css("display", "block");
-			$(".data").css("data", "none");
-			location.reload();
-	});
-}
 
 </script>
     <!-- End Page Content -->
