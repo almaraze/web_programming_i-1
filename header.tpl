@@ -29,6 +29,8 @@
   <a href="/login"><button class="w3-bar-item w3-button">Login</button></a>
   <a href="/logout"><button class="w3-bar-item w3-button" onclick="signOut()">Logout</button></a>
   <a href="/new_item"><button class="w3-bar-item w3-button">New item...</button></a>
+  Signed in as: <img id="pic" class="img-circle" width="100" height="100"/>
+  <text id="email" class="alert alert-danger"></text>
 </div>
 
 
@@ -43,6 +45,10 @@
         gapi.load('auth2', function() {
             gapi.auth2.init();
         });
+        var profile=googleUser.getBasicProfile();
+        $("#pic").attr('src',profile.getImageUrl());
+        $("#email").text(profile.getEmail());
+
     }
 </script>
 
